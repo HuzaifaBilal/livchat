@@ -39,6 +39,7 @@ export const get = query({
         return friend;
       })
     );
+    return friends;
   },
 });
 export const createGroup = mutation({

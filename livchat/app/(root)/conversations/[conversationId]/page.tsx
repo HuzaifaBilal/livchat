@@ -18,7 +18,7 @@ type Props = {
 };
 
 const ConversationsPage = ({ params: { conversationId } }: Props) => {
-  const conversation = useQuery(api.conversation.get, {
+  const conversation = useQuery(api.conversations.get, {
     id: conversationId,
   });
   const [removeFriendDialogOpen, setRemoveFriendDialogOpen] = useState(false);
