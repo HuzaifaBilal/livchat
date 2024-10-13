@@ -1,0 +1,30 @@
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Card } from "@/components/ui/card";
+import { CircleArrowLeft } from "lucide-react";
+import Link from "next/link";
+import React from "react";
+
+type Props = {
+  imageUrl?: string;
+  name: string;
+};
+
+const Header = ({ name, imageUrl }: Props) => {
+  return (
+    <Card className="w-full flex rounded-lg items-center p-2 justify-between">
+      <div className="flex items-center gap-2">
+        <Link href={"/conversations"} className="block lg:hidden">
+          <CircleArrowLeft></CircleArrowLeft>
+        </Link>
+        <Avatar>
+          <AvatarImage className="h-8 w-8" src={imageUrl}>
+            <AvatarFallback>{name.substring(0, 1)}</AvatarFallback>
+          </AvatarImage>
+        </Avatar>
+        <h2 className="font-semibold">{name}</h2>
+      </div>
+    </Card>
+  );
+};
+
+export default Header;
