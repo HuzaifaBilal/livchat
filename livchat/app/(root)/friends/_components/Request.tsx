@@ -20,6 +20,9 @@ const Request = ({ id, imageUrl, username, email }: Props) => {
   const { mutate: denyRequest, pending: denyPending } = useMutationState(
     api.request.deny
   );
+  const { mutate: acceptRequest, pending: acceptPending } = useMutationState(
+    api.request.accept
+  );
   return (
     <Card className="w-full p-2 flex flex-row items-center justify-between gap-2">
       <div className="flex items-center gap-4 truncate">
@@ -34,12 +37,28 @@ const Request = ({ id, imageUrl, username, email }: Props) => {
           <p className="text-xs text-muted-foreground truncate">{email}</p>
         </div>
         <div className="flex items-center gap-2">
-          <Button size={"icon"} disabled={denyPending} onClick={() => {}}>
+          <Button
+            size={"icon"}
+            disabled={denyPending || acceptPending}
+            onClick={() => {
+              acceptRequest({ id })
+                .then(() => {
+                  toast.success("Friend request accepted");
+                })
+                .catch((err) =>
+                  toast.error(
+                    err instanceof ConvexError
+                      ? err.data
+                      : "Unexpected error occured"
+                  )
+                );
+            }}
+          >
             <Check></Check>
           </Button>
           <Button
             size={"icon"}
-            disabled={denyPending}
+            disabled={denyPending || acceptPending}
             variant={"destructive"}
             onClick={() => {
               denyRequest({ id })
