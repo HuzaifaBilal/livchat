@@ -23,7 +23,7 @@ const GroupConversationItem = ({
 }: Props) => {
   return (
     <Link href={`/conversations/${id}`} className="w-full ">
-      <Card className="p-2 flex  flex-row items-center justify-between">
+      <Card className="p-2 flex  flex-row items-center gap-4 justify-start">
         <Avatar>
           <AvatarFallback>{name.charAt(0).toLocaleUpperCase()}</AvatarFallback>
         </Avatar>

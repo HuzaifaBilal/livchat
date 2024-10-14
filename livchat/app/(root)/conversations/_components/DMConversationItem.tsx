@@ -25,7 +25,7 @@ const DMConversationItem = ({
 }: Props) => {
   return (
     <Link href={`/conversations/${id}`} className="w-full ">
-      <Card className="p-2 flex  flex-row items-center justify-between">
+      <Card className="p-2 flex  flex-row items-center gap-4 justify-start">
         <Avatar>
           <AvatarImage src={imageUrl} />
           <AvatarFallback>
