@@ -5,8 +5,6 @@ import ConvexClientProvider from "@/providers/ConvexClientProvider";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "@/components/ui/theme/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
-import { Suspense } from "react";
-import LoadingLogo from "@/components/shared/LoadingLogo";
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "livchat",
@@ -29,9 +27,8 @@ export default function RootLayout({
         >
           {" "}
           <ConvexClientProvider>
-            <Suspense fallback={<LoadingLogo />}>
-              <TooltipProvider> {children}</TooltipProvider>
-            </Suspense>
+            <TooltipProvider> {children}</TooltipProvider>
+
             <Toaster richColors></Toaster>
           </ConvexClientProvider>
         </ThemeProvider>
