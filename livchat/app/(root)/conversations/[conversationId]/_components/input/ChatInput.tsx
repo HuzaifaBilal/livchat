@@ -55,10 +55,8 @@ const ChatInput = () => {
       });
   };
   const handleInputChange = (event: any) => {
-    const [value, selectionStart] = event.target;
-    if (selectionStart !== null) {
-      form.setValue("content", value);
-    }
+    const value = event.nativeEvent.target.value;
+    form.setValue("content", value);
   };
   return (
     <Card className="w-full p-2 rounded-lg relative">
