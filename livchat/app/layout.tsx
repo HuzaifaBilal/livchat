@@ -8,7 +8,6 @@ import { Toaster } from "@/components/ui/sonner";
 import { Suspense } from "react";
 import LoadingLogo from "@/components/shared/LoadingLogo";
 const inter = Inter({ subsets: ["latin"] });
-export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   title: "livchat",
   description: "Realtime chat app ",
