@@ -28,11 +28,11 @@ const ConversationsPage = ({ params: { conversationId } }: Props) => {
   const [leaveGroupDialogOpen, setLeaveGroupDialogOpen] = useState(false);
 
   return conversation === undefined ? (
-    <div className="w-full h-full flex items-center justify-content">
+    <div className="w-full h-full flex items-center justify-center">
       <Loader2></Loader2>
     </div>
   ) : conversation === null ? (
-    <p className="w-full h-full flex items-center justify-content">
+    <p className="w-full h-full flex items-center justify-center">
       Conversation not found
     </p>
   ) : (
