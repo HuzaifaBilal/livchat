@@ -27,9 +27,6 @@ export default function ConvexClientProvider({ children }: Props) {
         <AuthLoading>
           <LoadingLogo />
         </AuthLoading>
-        <Unauthenticated>
-          <LoadingLogo />
-        </Unauthenticated>
         <SignedOut>
           <UASignIn></UASignIn>
         </SignedOut>
