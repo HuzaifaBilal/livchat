@@ -18,7 +18,9 @@ export default function ConvexClientProvider({ children }: Props) {
   const CONVEX_URL = process.env.NEXT_PUBLIC_CONVEX_URL || "";
   const convex = new ConvexReactClient(CONVEX_URL);
   return (
-    <ClerkProvider>
+    <ClerkProvider
+      publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
+    >
       <ConvexProviderWithClerk client={convex} useAuth={useAuth}>
         <Authenticated> {children}</Authenticated>
         <Unauthenticated>
