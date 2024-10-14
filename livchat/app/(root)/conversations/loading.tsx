@@ -1,10 +1,6 @@
 import LoadingLogo from "@/components/shared/LoadingLogo";
 import React from "react";
 
-type Props = {};
-
-const loading = (props: Props) => {
+export default function Loading() {
   return <LoadingLogo />;
-};
-
-export default loading;
+}
