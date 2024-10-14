@@ -5,9 +5,10 @@ import ConvexClientProvider from "@/providers/ConvexClientProvider";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "@/components/ui/theme/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
-
+import { Suspense } from "react";
+import LoadingLogo from "@/components/shared/LoadingLogo";
 const inter = Inter({ subsets: ["latin"] });
-
+export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   title: "livchat",
   description: "Realtime chat app ",
@@ -29,7 +30,9 @@ export default function RootLayout({
         >
           {" "}
           <ConvexClientProvider>
-            <TooltipProvider> {children}</TooltipProvider>
+            <Suspense fallback={<LoadingLogo />}>
+              <TooltipProvider> {children}</TooltipProvider>
+            </Suspense>
             <Toaster richColors></Toaster>
           </ConvexClientProvider>
         </ThemeProvider>
