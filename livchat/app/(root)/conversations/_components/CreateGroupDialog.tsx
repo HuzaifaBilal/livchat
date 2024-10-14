@@ -68,7 +68,7 @@ const CreateGroupDialog = (props: Props) => {
   const unselectedFriends = useMemo(() => {
     return friends
       ? friends.filter((friend) => {
-          !members.includes(friend._id);
+          return !members.includes(friend._id);
         })
       : [];
   }, [members.length, friends?.length]);
