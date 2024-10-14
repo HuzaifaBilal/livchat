@@ -2,11 +2,11 @@
 import ItemList from "@/components/shared/item-list/ItemList";
 import { api } from "@/convex/_generated/api";
 import { useQuery } from "convex/react";
-import { Loader2 } from "lucide-react";
 import React from "react";
 import DMConversationItem from "./_components/DMConversationItem";
 import CreateGroupDialog from "./_components/CreateGroupDialog";
 import GroupConversationItem from "./_components/GroupConversationItem";
+import LoadingLogo from "@/components/shared/LoadingLogo";
 
 type Props = React.PropsWithChildren<{}>;
 
@@ -45,7 +45,7 @@ const ConversationsLayout = ({ children }: Props) => {
             })
           )
         ) : (
-          <Loader2></Loader2>
+          <LoadingLogo></LoadingLogo>
         )}
       </ItemList>
       {children}
