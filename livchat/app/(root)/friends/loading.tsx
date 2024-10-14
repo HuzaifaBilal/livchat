@@ -1,5 +1,3 @@
-"use client";
-
 import LoadingLogo from "@/components/shared/LoadingLogo";
 import React from "react";
 
