@@ -7,11 +7,13 @@ import React from "react";
 import DMConversationItem from "./_components/DMConversationItem";
 import CreateGroupDialog from "./_components/CreateGroupDialog";
 import GroupConversationItem from "./_components/GroupConversationItem";
+import LoadingLogo from "@/components/shared/LoadingLogo";
 
 type Props = React.PropsWithChildren<{}>;
 
 const ConversationsLayout = ({ children }: Props) => {
   const conversations = useQuery(api.conversations.get);
+  if (conversations === undefined) return <LoadingLogo />;
   return (
     <>
       <ItemList title="Conversations" action={<CreateGroupDialog />}>
