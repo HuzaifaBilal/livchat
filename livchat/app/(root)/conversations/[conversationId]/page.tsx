@@ -10,6 +10,8 @@ import Header from "./_components/Header";
 import Body from "./_components/body/Body";
 import ChatInput from "./_components/input/ChatInput";
 import RemoveFriendDialog from "./_components/dialog/RemoveFriendDialog";
+import DeleteGroupDialog from "./_components/dialog/DeleteGroupDialog";
+import LeaveGroupDialog from "./_components/dialog/LeaveGroupDialog";
 
 type Props = {
   params: {
@@ -18,7 +20,7 @@ type Props = {
 };
 
 const ConversationsPage = ({ params: { conversationId } }: Props) => {
-  const conversation = useQuery(api.conversations.get, {
+  const conversation = useQuery(api.conversation.get, {
     id: conversationId,
   });
   const [removeFriendDialogOpen, setRemoveFriendDialogOpen] = useState(false);
@@ -40,6 +42,16 @@ const ConversationsPage = ({ params: { conversationId } }: Props) => {
         open={removeFriendDialogOpen}
         setOpen={setRemoveFriendDialogOpen}
       ></RemoveFriendDialog>{" "}
+      <DeleteGroupDialog
+        conversationId={conversationId}
+        open={deleteGroupDialogOpen}
+        setOpen={setdeleteGroupDialogOpen}
+      ></DeleteGroupDialog>{" "}
+      <LeaveGroupDialog
+        conversationId={conversationId}
+        open={leaveGroupDialogOpen}
+        setOpen={setLeaveGroupDialogOpen}
+      ></LeaveGroupDialog>{" "}
       <Header
         imageUrl={
           conversation.isGroup
