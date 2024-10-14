@@ -27,11 +27,10 @@ const DMConversationItem = ({
     <Link href={`/conversations/${id}`} className="w-full ">
       <Card className="p-2 flex  flex-row items-center justify-between">
         <Avatar>
-          <AvatarImage src={imageUrl}>
-            <AvatarFallback>
-              <User />
-            </AvatarFallback>
-          </AvatarImage>
+          <AvatarImage src={imageUrl} />
+          <AvatarFallback>
+            <User />
+          </AvatarFallback>
         </Avatar>
         <div className="flex flex-col truncate">
           <h4 className="truncate">{username}</h4>

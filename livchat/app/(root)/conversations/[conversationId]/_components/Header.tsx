@@ -30,9 +30,8 @@ const Header = ({ name, imageUrl, options }: Props) => {
           <CircleArrowLeft></CircleArrowLeft>
         </Link>
         <Avatar>
-          <AvatarImage className="h-8 w-8" src={imageUrl}>
-            <AvatarFallback>{name.substring(0, 1)}</AvatarFallback>
-          </AvatarImage>
+          <AvatarImage className="h-8 w-8" src={imageUrl} />
+          <AvatarFallback>{name.substring(0, 1)}</AvatarFallback>
         </Avatar>
         <h2 className="font-semibold">{name}</h2>
       </div>

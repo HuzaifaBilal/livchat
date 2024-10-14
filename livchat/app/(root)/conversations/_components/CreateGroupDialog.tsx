@@ -157,12 +157,12 @@ const CreateGroupDialog = (props: Props) => {
                                   }
                                 }}
                               >
-                                <Avatar className="w-8 h-8 ">
+                                <Avatar className="w-8 h-8 "/>
                                   <AvatarImage src={friend.imageUrl}>
                                     <AvatarFallback>
                                       {friend.username.substring(0, 1)}
                                     </AvatarFallback>
-                                  </AvatarImage>
+                                 
                                 </Avatar>
                                 <h4 className="truncate">{friend.username}</h4>
                               </DropdownMenuCheckboxItem>
@@ -188,11 +188,11 @@ const CreateGroupDialog = (props: Props) => {
                       >
                         <div className="relative">
                           <Avatar className="w-8 h-8 ">
-                            <AvatarImage src={friend.imageUrl}>
+                            <AvatarImage src={friend.imageUrl}/>
                               <AvatarFallback>
                                 {friend.username.substring(0, 1)}
                               </AvatarFallback>
-                            </AvatarImage>
+                         
                           </Avatar>
                           <X
                             className="text-muted-foreground w-4 h-4 absolute bottom-8 left-7 bg-muted  rounded-full cursor-pointer"

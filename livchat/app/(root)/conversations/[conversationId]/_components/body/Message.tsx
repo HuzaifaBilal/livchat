@@ -69,9 +69,8 @@ const Message = ({
           invisible: lastByUser,
         })}
       >
-        <AvatarImage src={senderImage}>
-          <AvatarFallback>{senderName.substring(0, 1)}</AvatarFallback>
-        </AvatarImage>
+        <AvatarImage src={senderImage} />
+        <AvatarFallback>{senderName.substring(0, 1)}</AvatarFallback>
       </Avatar>
     </div>
   );
