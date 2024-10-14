@@ -1,6 +1,12 @@
 "use client";
 
-import { ClerkProvider, SignedOut, useAuth } from "@clerk/nextjs";
+import {
+  ClerkProvider,
+  SignedOut,
+  SignIn,
+  SignUp,
+  useAuth,
+} from "@clerk/nextjs";
 import { ConvexProviderWithClerk } from "convex/react-clerk";
 import {
   Authenticated,
@@ -20,6 +26,7 @@ export default function ConvexClientProvider({ children }: Props) {
   const convex = new ConvexReactClient(CONVEX_URL);
   return (
     <ClerkProvider
+      signUpUrl="/conversations"
       publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
     >
       <ConvexProviderWithClerk client={convex} useAuth={useAuth}>
