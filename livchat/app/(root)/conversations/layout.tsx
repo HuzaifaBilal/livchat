@@ -15,11 +15,6 @@ const ConversationsLayout = ({ children }: Props) => {
   const conversations = useQuery(api.conversations.get);
   return (
     <>
-      {conversations === undefined ? (
-        <div className="fixed inset-0">
-          <LoadingLogo></LoadingLogo>
-        </div>
-      ) : null}
       <ItemList title="Conversations" action={<CreateGroupDialog />}>
         {conversations ? (
           conversations.length === 0 ? (
