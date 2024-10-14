@@ -86,7 +86,17 @@ const ConversationsPage = ({ params: { conversationId } }: Props) => {
             : conversation.otherMember?.username) || ""
         }
       />
-      <Body></Body>
+      <Body
+        members={
+          conversation.isGroup
+            ? conversation.otherMembers
+              ? conversation.otherMembers
+              : []
+            : conversation.otherMember
+              ? [conversation.otherMember]
+              : []
+        }
+      ></Body>
       <ChatInput></ChatInput>
     </ConversationContainer>
   );
