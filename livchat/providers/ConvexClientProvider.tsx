@@ -2,7 +2,12 @@
 
 import { ClerkProvider, SignedOut, useAuth } from "@clerk/nextjs";
 import { ConvexProviderWithClerk } from "convex/react-clerk";
-import { Authenticated, AuthLoading, ConvexReactClient } from "convex/react";
+import {
+  Authenticated,
+  AuthLoading,
+  ConvexReactClient,
+  Unauthenticated,
+} from "convex/react";
 import LoadingLogo from "@/components/shared/LoadingLogo";
 import UASignIn from "./UASignIn";
 
@@ -22,6 +27,9 @@ export default function ConvexClientProvider({ children }: Props) {
         <AuthLoading>
           <LoadingLogo />
         </AuthLoading>
+        <Unauthenticated>
+          <LoadingLogo />
+        </Unauthenticated>
         <SignedOut>
           <UASignIn></UASignIn>
         </SignedOut>
